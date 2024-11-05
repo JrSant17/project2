@@ -40,3 +40,28 @@
 .read-the-docs {
   color: #888;
 }
+
+.heroList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3px;
+  padding: 5px;
+}
+
+body {
+  background-image: url('https://i.pinimg.com/originals/55/8a/b7/558ab7bee36f124b5fa475028a61fc24.jpg');
+}
+
+
+.hero-name {
+  /* color: ;
+  outline-width: 10px; */
+  color: rgb(200, 255, 0);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.searchBar {
+  width: 30em;
+  height: 1.5em;
+}
