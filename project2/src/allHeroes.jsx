@@ -1,13 +1,8 @@
-import { Link, useParams } from 'react-router-dom';
-import { useContext } from 'react';
-import React, { useState, useEffect } from 'react'
-import DetailsContext from './detailsContext';
+import { Link } from 'react-router-dom';
 import HeroCard from './heroCard';
-import SearchBar from './searchBar';
+// import SearchBar from './searchBar';
 
 export default function AllHeroes ({ heroList }) {
-    const { details } = useContext(DetailsContext)
-    const [filteredHeros, setFilteredHeroes] = useState(heroList)
 
     const allHeroData = heroList.filter(hero => hero.biography.alignment === 'good');
 

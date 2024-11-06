@@ -1,9 +1,6 @@
-import { Link, useParams } from 'react-router-dom';
-import { useContext } from 'react';
-import React, { useState, useEffect } from 'react'
-import DetailsContext from './detailsContext';
+import { Link } from 'react-router-dom';
 import HeroCard from './heroCard';
-import SearchBar from './searchBar';
+// import SearchBar from './searchBar';
 
 export default function AllNeutrals ({ heroList }) {
     
