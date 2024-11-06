@@ -2,7 +2,7 @@ import { Link, useParams } from 'react-router-dom';
 import { useContext } from 'react';
 import React, { useState, useEffect } from 'react'
 import DetailsContext from './detailsContext';
-import SearchBar from './searchBar';
+
 
 
 
@@ -18,6 +18,10 @@ if (!details) {
     return (
    
         <div className={`hero-details ${id}`}>
+            <Link to='/'><button>Home</button></Link>
+            <Link to='/allHeroes'><button>Heroes</button></Link>
+            <Link to='/allVillains'><button>Villians</button></Link>
+            <Link to='/allNeutral'><button>Neutral</button></Link>
             <div className='name-img'>
                 <h1 id={details.name}>{details.name}</h1>
                 <img src={details.images.md} alt={details.name}/>
@@ -48,7 +52,6 @@ if (!details) {
                 ))}
                 </ul>
             </div>
-            <Link to='/'><button>Go Back</button></Link>
         </div>
 
         

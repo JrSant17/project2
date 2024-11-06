@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import HeroCard from './heroCard';
 import SearchBar from './searchBar';
+import { Link } from 'react-router-dom';
 
 export default function Home({ heroList }) {
     const [searchTerm, setSearchTerm] = useState('');
@@ -15,7 +16,10 @@ export default function Home({ heroList }) {
     
     return(<>
         <div>
-            <h1>HOMEPAGE</h1>
+            <h1>Super Hero Homepage</h1>
+            <Link to='/allHeroes'><button>Heroes</button></Link>
+            <Link to='/allVillains'><button>Villains</button></Link>
+            <Link to='/allNeutral'><button>Neutral</button></Link>
         </div>
         <div className='search-bar'>
             <SearchBar setSearchTerm={setSearchTerm} />

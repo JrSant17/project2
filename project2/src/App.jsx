@@ -4,10 +4,13 @@ import Home from "./Home";
 import Details from './details';
 import DetailsContext from './detailsContext';
 import './App.css'
+import AllHeroes from './allHeroes';
+import AllVillains from './allVillains';
+import AllNeutrals from './allNeutral';
 
 function App() {
   const [heroList, setHeroList] = useState([]);
-  const [filteredHeros, setFilteredHeroes] = useState([]);
+  // const [filteredHeros, setFilteredHeroes] = useState([]);
   const [details, setDetails] = useState({});
   const value = { details, setDetails };
 
@@ -18,7 +21,11 @@ function App() {
       
   }, []);
 
-  if(heroList.length == 0) {
+
+  // const heroData = heroList.filter(hero => hero.biography.alignment === 'neutral');
+  // console.log(heroData);
+  
+  if(heroList.length === 0) {
     return (<h2>Loading Page...</h2>)
   } else {
 
@@ -26,9 +33,12 @@ return (
   
     <DetailsContext.Provider value={value}>
       <div className='container'>
-         <Routes>
+        <Routes>
+          <Route path ='/allHeroes' element={<AllHeroes heroList={heroList} />} />
           <Route path='/' element={<Home heroList={heroList} />}/>
           <Route path='/details/:id' element={<Details />}/>
+          <Route path ='/allVillains' element={<AllVillains heroList={heroList} />} />
+          <Route path ='/allNeutral' element={<AllNeutrals heroList={heroList} />} />
         </Routes>
       </div>
     </DetailsContext.Provider>
@@ -37,5 +47,7 @@ return (
   )
 }
 }
+
+
 
 export default App
