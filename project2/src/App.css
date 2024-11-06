@@ -42,23 +42,30 @@
 }
 
 .heroList {
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 3px;
-  padding: 5px;
+  padding: 5px; */
+  display: flex;
+  flex-wrap: wrap;
+  width: 1000px;
+  padding: 50px;
+  justify-content: space-between;
+
 }
 
 body {
-  background-image: url('https://i.pinimg.com/originals/55/8a/b7/558ab7bee36f124b5fa475028a61fc24.jpg');
+  background-image: url('https://images8.alphacoders.com/135/thumb-1920-1354447.jpeg');
+  background-attachment: fixed;
 }
 
 
 .hero-name {
-  /* color: ;
-  outline-width: 10px; */
-  color: rgb(200, 255, 0);
+  color: white;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
+
+
 }
 
 .searchBar {

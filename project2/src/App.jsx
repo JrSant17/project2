@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import Home from "./Home";
-import Details from './details';
+import HeroDetails from './details';
 import DetailsContext from './detailsContext';
 import './App.css'
 import AllHeroes from './allHeroes';
@@ -36,7 +36,7 @@ return (
         <Routes>
           <Route path ='/allHeroes' element={<AllHeroes heroList={heroList} />} />
           <Route path='/' element={<Home heroList={heroList} />}/>
-          <Route path='/details/:id' element={<Details />}/>
+          <Route path='/details/:id' element={<HeroDetails />}/>
           <Route path ='/allVillains' element={<AllVillains heroList={heroList} />} />
           <Route path ='/allNeutral' element={<AllNeutrals heroList={heroList} />} />
         </Routes>
