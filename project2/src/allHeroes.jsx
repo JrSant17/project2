@@ -10,10 +10,10 @@ export default function AllHeroes ({ heroList }) {
     
     return(<>
         <div>
-            <h1>All Heroes</h1>
-            <Link to='/'><button>Home</button></Link>
-            <Link to='/allVillains'><button>Villains</button></Link>
-            <Link to='/allNeutral'><button>Neutral</button></Link>
+            <h1 className='heroes'>Heroes</h1>
+            <Link to='/'><button className='nav-button'>Home</button></Link>
+            <Link to='/allVillains'><button className='nav-button'>Villains</button></Link>
+            <Link to='/allNeutral'><button className='nav-button'>Neutral</button></Link>
         </div>
         {/* <div className='search-bar'>
             <SearchBar  />

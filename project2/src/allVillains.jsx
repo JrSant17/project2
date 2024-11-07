@@ -11,10 +11,10 @@ export default function AllVillains ({ heroList }) {
     
     return(<>
         <div>
-            <h1>All Villains</h1>
-            <Link to='/'><button>Home</button></Link>
-            <Link to='/allHeroes'><button>Heroes</button></Link>
-            <Link to='/allNeutral'><button>Neutral</button></Link>
+            <h1 className='villains'>Villains</h1>
+            <Link to='/'><button className='nav-button'>Home</button></Link>
+            <Link to='/allHeroes'><button className='nav-button'>Heroes</button></Link>
+            <Link to='/allNeutral'><button className='nav-button'>Neutral</button></Link>
         </div>
         {/* <div className='search-bar'>
             <SearchBar  />
