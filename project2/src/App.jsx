@@ -16,36 +16,36 @@ function App() {
 
   useEffect(() => {
     fetch('https://akabab.github.io/superhero-api/api/all.json')
-      .then(res => res.json()) 
+      .then(res => res.json())
       .then(data => setHeroList(data));
-      
+
   }, []);
 
 
   // const heroData = heroList.filter(hero => hero.biography.alignment === 'neutral');
   // console.log(heroData);
-  
-  if(heroList.length === 0) {
+
+  if (heroList.length === 0) {
     return (<h2>Loading Page...</h2>)
   } else {
 
-return (
-  
-    <DetailsContext.Provider value={value}>
-      <div className='container'>
-        <Routes>
-          <Route path ='/allHeroes' element={<AllHeroes heroList={heroList} />} />
-          <Route path='/' element={<Home heroList={heroList} />}/>
-          <Route path='/details/:id' element={<HeroDetails />}/>
-          <Route path ='/allVillains' element={<AllVillains heroList={heroList} />} />
-          <Route path ='/allNeutral' element={<AllNeutrals heroList={heroList} />} />
-        </Routes>
-      </div>
-    </DetailsContext.Provider>
-  
+    return (
 
-  )
-}
+      <DetailsContext.Provider value={value}>
+        <div className='container'>
+          <Routes>
+            <Route path='/allHeroes' element={<AllHeroes heroList={heroList} />} />
+            <Route path='/' element={<Home heroList={heroList} />} />
+            <Route path='/details/:id' element={<HeroDetails />} />
+            <Route path='/allVillains' element={<AllVillains heroList={heroList} />} />
+            <Route path='/allNeutral' element={<AllNeutrals heroList={heroList} />} />
+          </Routes>
+        </div>
+      </DetailsContext.Provider>
+
+
+    )
+  }
 }
 
 

@@ -2,13 +2,13 @@ import { Link } from 'react-router-dom';
 import HeroCard from './heroCard';
 // import SearchBar from './searchBar';
 
-export default function AllNeutrals ({ heroList }) {
-    
+export default function AllNeutrals({ heroList }) {
+
     const allNeutralData = heroList.filter(hero => hero.biography.alignment === 'neutral');
 
 
-    
-    return(<>
+
+    return (<>
         <div>
             <h1 className='neutrals'>Neutrals</h1>
             <Link to='/'><button className='nav-button'>Home</button></Link>
@@ -21,7 +21,7 @@ export default function AllNeutrals ({ heroList }) {
         <div className='heroList'>
             {allNeutralData.map(hero => <HeroCard key={hero.id} heroInfo={hero} />)}
         </div>
-        </>
+    </>
     )
 
 

@@ -9,13 +9,13 @@ export default function Home({ heroList }) {
 
     useEffect(() => {
         const filteredData = heroList.filter((hero) =>
-        hero.name.toLowerCase().includes(searchTerm.toLowerCase())
+            hero.name.toLowerCase().includes(searchTerm.toLowerCase())
         );
         setFilteredHeroes(filteredData);
     }, [searchTerm, heroList])
-    
-    return(<>
-        <div className='container-fluid'> 
+
+    return (<>
+        <div className='container-fluid'>
             <h1 className='homepage'>Super Hero Homepage</h1>
             <Link to='/allHeroes'><button className='nav-button'>Heroes</button></Link>
             <Link to='/allVillains'><button className='nav-button'>Villains</button></Link>
@@ -27,7 +27,7 @@ export default function Home({ heroList }) {
         <div className='heroList'>
             {filteredHeros.map(hero => <HeroCard key={hero.id} heroInfo={hero} />)}
         </div>
-        </>
+    </>
     )
 
 }

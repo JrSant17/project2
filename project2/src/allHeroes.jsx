@@ -2,13 +2,13 @@ import { Link } from 'react-router-dom';
 import HeroCard from './heroCard';
 // import SearchBar from './searchBar';
 
-export default function AllHeroes ({ heroList }) {
+export default function AllHeroes({ heroList }) {
 
     const allHeroData = heroList.filter(hero => hero.biography.alignment === 'good');
 
 
-    
-    return(<>
+
+    return (<>
         <div>
             <h1 className='heroes'>Heroes</h1>
             <Link to='/'><button className='nav-button'>Home</button></Link>
@@ -21,7 +21,7 @@ export default function AllHeroes ({ heroList }) {
         <div className='heroList'>
             {allHeroData.map(hero => <HeroCard key={hero.id} heroInfo={hero} />)}
         </div>
-        </>
+    </>
     )
 
 
