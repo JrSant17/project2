@@ -15,7 +15,7 @@ export default function Home({ heroList }) {
     }, [searchTerm, heroList])
     
     return(<>
-        <div class='container-fluid'> 
+        <div className='container-fluid'> 
             <h1 className='homepage'>Super Hero Homepage</h1>
             <Link to='/allHeroes'><button className='nav-button'>Heroes</button></Link>
             <Link to='/allVillains'><button className='nav-button'>Villains</button></Link>

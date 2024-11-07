@@ -18,39 +18,49 @@ if (!details) {
     return (
    
         <div className={`hero-details ${id}`}>
-            <Link to='/'><button>Home</button></Link>
-            <Link to='/allHeroes'><button>Heroes</button></Link>
-            <Link to='/allVillains'><button>Villians</button></Link>
-            <Link to='/allNeutral'><button>Neutral</button></Link>
-            <div className='name-img'>
-                <h1 id={details.name}>{details.name}</h1>
-                <img src={details.images.md} alt={details.name}/>
-            </div>
-            <div>
-                <h3 className='powerstats'>{details.name} Power Stats:</h3>
-                <ul>
-                {Object.entries(details.powerstats).map(([stat, value]) => (
-                        <li key={stat}>{`${stat}: ${value}`}</li>
+            <h1 className='heroes' id={details.name}>{details.name}</h1>
+            <Link to='/'><button className='nav-button'>Home</button></Link>
+            <Link to='/allHeroes'><button className='nav-button'>Heroes</button></Link>
+            <Link to='/allVillains'><button className='nav-button'>Villians</button></Link>
+            <Link to='/allNeutral'><button className='nav-button'>Neutral</button></Link>
+            
+            <div >
+                <div className='wrapper1'>
+                    <div className='name-img'>
+                        <img src={details.images.md} alt={details.name}/>
+                    </div>
+                
+                        <ul className='biography'>
+                        <h3 className='biography-title'>{details.name} Biography:</h3>
+                            {Object.entries(details.biography).map(([info, value]) => (
+                            <li key={info}>{`${info.toUpperCase()}: ${value}`}</li>
+                        ))}
+                        </ul>
+                </div>
+                <div className='wrapper2'>
+                    <ul className='appearance'>
+                        <h3 className='appearance-title'>{details.name} Appearance:</h3>
+                            {Object.entries(details.appearance).map(([appearance, value]) => (
+                            <li key={appearance}>{`${appearance.toUpperCase()}: ${value}`}</li>
                     ))}
-                </ul>
-                <h3 className='connections'>{details.name} Connections:</h3>
-                <ul>
-                {Object.entries(details.connections).map(([connection, value]) => (
-                    <li key={connection}>{`${connection}: ${value}`}</li>
-                ))}
-                </ul>
-                <h3 className='appearance'>{details.name} Appearance:</h3>
-                <ul>
-                {Object.entries(details.appearance).map(([appearance, value]) => (
-                    <li key={appearance}>{`${appearance}: ${value}`}</li>
-                ))}
-                </ul>
-                <h3 className='biography'>{details.name} Biography:</h3>
-                <ul>
-                {Object.entries(details.biography).map(([info, value]) => (
-                    <li key={info}>{`${info}: ${value}`}</li>
-                ))}
-                </ul>
+                    </ul>
+                        <ul className='powerstats'>
+                        <h3 className='powerstats-title'>{details.name} Power Stats:</h3>
+                            {Object.entries(details.powerstats).map(([stat, value]) => (
+                            <li key={stat}>{`${stat.toUpperCase()}: ${value}`}</li>
+                        ))}
+                    </ul>
+                </div> 
+                <div className='wrapper3'>
+                    <ul className='connections'>
+                        <h3 className='connections-title'>{details.name} Connections:</h3>
+                            {Object.entries(details.connections).map(([connection, value]) => (
+                            <li key={connection}>{`${connection.toUpperCase()}: ${value}`}</li>
+                    ))}
+                    </ul>
+                </div>
+
+
             </div>
         </div>
 
